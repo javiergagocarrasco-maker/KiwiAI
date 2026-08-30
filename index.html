@@ -3,689 +3,747 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>🦜 Kiwi AI</title>
+    <title>🦜 Kiwi AI</title>
 
-<style>
+    <style>
 
-*{
-box-sizing:border-box;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-body{
-margin:0;
-font-family:Arial,sans-serif;
-background:#212121;
-color:white;
-}
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #212121;
+            color: white;
+        }
 
-button{
-cursor:pointer;
-}
+        button {
+            cursor: pointer;
+        }
 
-.oculto{
-display:none!important;
-}
-
-
-/* LOGIN */
-
-.pantalla{
-height:100vh;
-display:flex;
-align-items:center;
-justify-content:center;
-background:#171717;
-}
-
-.caja{
-width:380px;
-max-width:90%;
-background:#252525;
-padding:35px;
-border-radius:16px;
-text-align:center;
-border:1px solid #3b3b3b;
-}
-
-.logo{
-font-size:60px;
-}
-
-input{
-width:100%;
-padding:14px;
-margin:7px 0;
-border-radius:9px;
-border:1px solid #555;
-background:#333;
-color:white;
-font-size:15px;
-}
-
-button{
-font-size:15px;
-}
-
-.principal{
-width:100%;
-padding:14px;
-border:0;
-border-radius:9px;
-background:white;
-color:black;
-margin-top:10px;
-}
-
-.secundario{
-width:100%;
-padding:14px;
-border:1px solid #555;
-border-radius:9px;
-background:#333;
-color:white;
-margin-top:10px;
-}
-
-.link{
-background:none;
-border:0;
-color:#aaa;
-margin-top:15px;
-}
+        .oculto {
+            display: none !important;
+        }
 
 
-/* APP */
+        /* LOGIN */
 
-#app{
-height:100vh;
-display:flex;
-}
+        .pantalla-login {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #171717;
+        }
 
-.sidebar{
-width:270px;
-background:#171717;
-padding:15px;
-display:flex;
-flex-direction:column;
-}
+        .caja-login {
+            width: 380px;
+            max-width: 90%;
+            background: #252525;
+            padding: 35px;
+            border-radius: 16px;
+            text-align: center;
+            border: 1px solid #3a3a3a;
+        }
 
-.titulo{
-font-size:22px;
-margin-bottom:20px;
-}
+        .logo {
+            font-size: 60px;
+        }
 
-.nuevo{
-padding:12px;
-background:#333;
-border:1px solid #555;
-border-radius:9px;
-color:white;
-text-align:left;
-}
+        .caja-login h1 {
+            margin: 10px 0;
+        }
 
-.historialTitulo{
-font-size:13px;
-color:#777;
-margin:18px 0 8px;
-}
+        .subtitulo {
+            color: #999;
+            margin-bottom: 25px;
+        }
 
-#historial{
-flex:1;
-overflow-y:auto;
-}
+        input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 12px;
+            border-radius: 9px;
+            border: 1px solid #555;
+            background: #333;
+            color: white;
+            outline: none;
+            font-size: 15px;
+        }
 
-.chatItem{
-padding:11px;
-border-radius:8px;
-margin-bottom:4px;
-color:#ccc;
-cursor:pointer;
-overflow:hidden;
-white-space:nowrap;
-text-overflow:ellipsis;
-}
+        .boton-principal {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: white;
+            color: black;
+            margin-bottom: 10px;
+        }
 
-.chatItem:hover{
-background:#2f2f2f;
-}
+        .boton-secundario {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #555;
+            border-radius: 9px;
+            background: #333;
+            color: white;
+            margin-bottom: 10px;
+        }
 
-.ajustes{
-padding:12px;
-background:#333;
-border:1px solid #555;
-border-radius:9px;
-color:white;
-text-align:left;
-}
+        .boton-link {
+            border: none;
+            background: transparent;
+            color: #aaa;
+        }
 
+        .boton-link:hover {
+            color: white;
+        }
 
-/* CHAT */
-
-.principalArea{
-flex:1;
-display:flex;
-flex-direction:column;
-min-width:0;
-}
-
-.cabecera{
-padding:18px;
-border-bottom:1px solid #333;
-}
-
-#chat{
-flex:1;
-overflow-y:auto;
-padding:30px 15%;
-}
-
-.bienvenida{
-text-align:center;
-margin-top:15%;
-}
-
-.kiwi{
-font-size:70px;
-}
-
-.mensaje{
-margin-bottom:25px;
-line-height:1.6;
-white-space:pre-wrap;
-}
-
-.usuario{
-text-align:right;
-}
-
-.kiwiMensaje{
-text-align:left;
-}
+        .mensaje {
+            margin-top: 15px;
+            min-height: 20px;
+        }
 
 
-/* ENTRADA */
+        /* APP */
 
-.entrada{
-padding:15px 15%;
-}
-
-.cajaMensaje{
-display:flex;
-background:#333;
-border:1px solid #555;
-border-radius:14px;
-padding:6px;
-}
-
-textarea{
-flex:1;
-resize:none;
-background:transparent;
-border:0;
-outline:0;
-color:white;
-padding:12px;
-font-family:Arial;
-font-size:15px;
-min-height:45px;
-}
-
-.micro{
-width:45px;
-height:45px;
-border:0;
-border-radius:9px;
-background:#444;
-color:white;
-}
-
-.enviar{
-width:45px;
-height:45px;
-border:0;
-border-radius:9px;
-background:white;
-color:black;
-margin-left:5px;
-}
+        #app {
+            height: 100vh;
+            display: flex;
+        }
 
 
-/* MODAL */
+        /* BARRA LATERAL */
 
-.modal{
-position:fixed;
-inset:0;
-background:rgba(0,0,0,.75);
-display:flex;
-align-items:center;
-justify-content:center;
-z-index:1000;
-}
+        .barra-lateral {
+            width: 270px;
+            background: #171717;
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+        }
 
-.modalCaja{
-width:420px;
-max-width:90%;
-background:#252525;
-border:1px solid #555;
-border-radius:16px;
-padding:25px;
-}
+        .titulo {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
 
-.avatar{
-width:90px;
-height:90px;
-border-radius:50%;
-background:#333;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:50px;
-margin:10px auto 20px;
-overflow:hidden;
-}
+        .nuevo-chat {
+            width: 100%;
+            padding: 12px;
+            background: #333;
+            border: 1px solid #555;
+            color: white;
+            border-radius: 9px;
+            text-align: left;
+            margin-bottom: 15px;
+        }
 
-.avatar img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
+        .historial-titulo {
+            color: #777;
+            font-size: 13px;
+            margin-bottom: 10px;
+        }
 
-.info{
-background:#333;
-padding:12px;
-border-radius:8px;
-margin:8px 0;
-color:#bbb;
-word-break:break-all;
-}
+        #historial {
+            flex: 1;
+            overflow-y: auto;
+        }
 
-.peligro{
-background:#8b0000;
-color:white;
-border:0;
-width:100%;
-padding:13px;
-border-radius:8px;
-margin-top:10px;
-}
+        .chat-historial {
+            padding: 11px;
+            margin-bottom: 5px;
+            border-radius: 8px;
+            color: #ccc;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
 
-.cerrar{
-background:#333;
-color:white;
-border:1px solid #555;
-width:100%;
-padding:13px;
-border-radius:8px;
-margin-top:10px;
-}
+        .chat-historial:hover {
+            background: #2f2f2f;
+            color: white;
+        }
 
-@media(max-width:700px){
+        .chat-historial.activo {
+            background: #333;
+            color: white;
+        }
 
-.sidebar{
-display:none;
-}
+        .boton-ajustes {
+            width: 100%;
+            padding: 12px;
+            background: #333;
+            border: 1px solid #555;
+            color: white;
+            border-radius: 9px;
+            text-align: left;
+            margin-bottom: 10px;
+        }
 
-#chat{
-padding:20px;
-}
 
-.entrada{
-padding:10px;
-}
+        /* CHAT */
 
-}
+        .principal {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
 
-</style>
+        .cabecera {
+            padding: 18px;
+            border-bottom: 1px solid #333;
+        }
+
+        #chat {
+            flex: 1;
+            overflow-y: auto;
+            padding: 30px 15%;
+        }
+
+        .bienvenida {
+            text-align: center;
+            margin-top: 15%;
+        }
+
+        .kiwi-grande {
+            font-size: 70px;
+        }
+
+        .mensaje-chat {
+            margin-bottom: 25px;
+            white-space: pre-wrap;
+            line-height: 1.6;
+        }
+
+        .usuario-mensaje {
+            text-align: right;
+        }
+
+        .kiwi-mensaje {
+            text-align: left;
+        }
+
+
+        /* ENTRADA */
+
+        .entrada {
+            padding: 15px 15%;
+        }
+
+        .caja-mensaje {
+            display: flex;
+            align-items: flex-end;
+            background: #333;
+            border: 1px solid #555;
+            border-radius: 14px;
+            padding: 6px;
+        }
+
+        #texto {
+            flex: 1;
+            resize: none;
+            border: none;
+            background: transparent;
+            color: white;
+            outline: none;
+            padding: 12px;
+            margin: 0;
+            min-height: 45px;
+            max-height: 180px;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+        }
+
+        .boton-microfono,
+        .enviar {
+            width: 45px;
+            height: 45px;
+            border: none;
+            border-radius: 9px;
+            margin-left: 5px;
+        }
+
+        .boton-microfono {
+            background: #444;
+            color: white;
+        }
+
+        .boton-microfono.escuchando {
+            background: #777;
+        }
+
+        .enviar {
+            background: white;
+            color: black;
+        }
+
+        .estado-microfono {
+            font-size: 12px;
+            color: #888;
+            text-align: center;
+            margin-top: 7px;
+            min-height: 16px;
+        }
+
+
+        /* AJUSTES */
+
+        .ventana {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .caja-ajustes {
+            width: 400px;
+            max-width: 90%;
+            background: #252525;
+            border: 1px solid #555;
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .caja-ajustes h2 {
+            margin-top: 0;
+        }
+
+        .correo-ajustes {
+            background: #333;
+            padding: 12px;
+            border-radius: 8px;
+            color: #aaa;
+            word-break: break-all;
+            margin-bottom: 20px;
+        }
+
+        .boton-cerrar-sesion {
+            width: 100%;
+            padding: 13px;
+            background: #444;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .boton-eliminar {
+            width: 100%;
+            padding: 13px;
+            background: #8b0000;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .boton-cerrar-ajustes {
+            width: 100%;
+            padding: 13px;
+            background: #333;
+            color: white;
+            border: 1px solid #555;
+            border-radius: 8px;
+        }
+
+
+        @media(max-width:700px) {
+
+            .barra-lateral {
+                display: none;
+            }
+
+            #chat {
+                padding: 20px;
+            }
+
+            .entrada {
+                padding: 10px;
+            }
+
+        }
+
+    </style>
 
 </head>
+
 
 <body>
 
 
+<!-- ========================= -->
 <!-- LOGIN -->
+<!-- ========================= -->
 
-<div id="login" class="pantalla">
+<div id="pantallaLogin" class="pantalla-login">
 
-<div class="caja">
+    <div class="caja-login">
 
-<div class="logo">🦜</div>
+        <div class="logo">
+            🦜
+        </div>
 
-<h1>Kiwi AI</h1>
+        <h1>
+            Kiwi AI
+        </h1>
 
-<p>Inicia sesión para continuar</p>
+        <div class="subtitulo">
+            Inicia sesión para continuar
+        </div>
 
-<input
-id="loginEmail"
-type="email"
-placeholder="Correo electrónico">
+        <input
+            id="loginEmail"
+            type="email"
+            placeholder="Correo electrónico"
+        >
 
-<input
-id="loginPassword"
-type="password"
-placeholder="Contraseña">
+        <input
+            id="loginPassword"
+            type="password"
+            placeholder="Contraseña"
+        >
 
-<button
-class="principal"
-onclick="login()">
+        <button
+            class="boton-principal"
+            onclick="iniciarSesion()"
+        >
+            Iniciar sesión
+        </button>
 
-Iniciar sesión
+        <button
+            class="boton-secundario"
+            onclick="mostrarRegistro()"
+        >
+            Crear una cuenta
+        </button>
 
-</button>
+        <button
+            class="boton-link"
+            onclick="mostrarRecuperacion()"
+        >
+            ¿Has olvidado tu contraseña?
+        </button>
 
-<button
-class="secundario"
-onclick="mostrarRegistro()">
+        <div
+            id="mensajeLogin"
+            class="mensaje"
+        ></div>
 
-Crear una cuenta
-
-</button>
-
-<button
-class="link"
-onclick="mostrarRecuperacion()">
-
-¿Has olvidado tu contraseña?
-
-</button>
-
-<div id="loginMensaje"></div>
+    </div>
 
 </div>
 
-</div>
 
-
+<!-- ========================= -->
 <!-- REGISTRO -->
+<!-- ========================= -->
 
-<div id="registro" class="pantalla oculto">
+<div id="pantallaRegistro" class="pantalla-login oculto">
 
-<div class="caja">
+    <div class="caja-login">
 
-<div class="logo">🦜</div>
+        <div class="logo">
+            🦜
+        </div>
 
-<h1>Crear cuenta</h1>
+        <h1>
+            Crear cuenta
+        </h1>
 
-<input
-id="registroNombre"
-type="text"
-placeholder="Tu nombre">
+        <div class="subtitulo">
+            Regístrate en Kiwi AI
+        </div>
 
-<input
-id="registroEmail"
-type="email"
-placeholder="Correo electrónico">
+        <input
+            id="registroEmail"
+            type="email"
+            placeholder="Correo electrónico"
+        >
 
-<input
-id="registroPassword"
-type="password"
-placeholder="Contraseña">
+        <input
+            id="registroPassword"
+            type="password"
+            placeholder="Contraseña"
+        >
 
-<input
-id="registroPassword2"
-type="password"
-placeholder="Repite la contraseña">
+        <input
+            id="registroPassword2"
+            type="password"
+            placeholder="Repite la contraseña"
+        >
 
-<button
-class="principal"
-onclick="registrar()">
+        <button
+            class="boton-principal"
+            onclick="registrarse()"
+        >
+            Crear cuenta
+        </button>
 
-Crear cuenta
+        <button
+            class="boton-link"
+            onclick="mostrarLogin()"
+        >
+            Ya tengo una cuenta
+        </button>
 
-</button>
+        <div
+            id="mensajeRegistro"
+            class="mensaje"
+        ></div>
 
-<button
-class="link"
-onclick="mostrarLogin()">
-
-Ya tengo una cuenta
-
-</button>
-
-<div id="registroMensaje"></div>
+    </div>
 
 </div>
 
-</div>
 
-
+<!-- ========================= -->
 <!-- RECUPERACION -->
+<!-- ========================= -->
 
-<div id="recuperacion" class="pantalla oculto">
+<div id="pantallaRecuperacion" class="pantalla-login oculto">
 
-<div class="caja">
+    <div class="caja-login">
 
-<div class="logo">🔑</div>
+        <div class="logo">
+            🔑
+        </div>
 
-<h1>Recuperar contraseña</h1>
+        <h1>
+            Recuperar contraseña
+        </h1>
 
-<input
-id="recuperarEmail"
-type="email"
-placeholder="Correo electrónico">
+        <div class="subtitulo">
+            Recupera tu cuenta
+        </div>
 
-<button
-class="principal"
-onclick="generarCodigo()">
+        <input
+            id="recuperarEmail"
+            type="email"
+            placeholder="Correo electrónico"
+        >
 
-Generar código
+        <button
+            class="boton-principal"
+            onclick="generarCodigo()"
+        >
+            Generar código
+        </button>
 
-</button>
+        <div id="zonaCodigo" class="oculto">
 
-<div id="zonaCodigo" class="oculto">
+            <p>
+                Tu código es:
+            </p>
 
-<p>Tu código:</p>
+            <h2 id="codigo"></h2>
 
-<h2 id="codigo"></h2>
+            <input
+                id="codigoIntroducido"
+                type="text"
+                placeholder="Código"
+            >
 
-<input
-id="codigoInput"
-placeholder="Código">
+            <input
+                id="nuevaPassword"
+                type="password"
+                placeholder="Nueva contraseña"
+            >
 
-<input
-id="nuevaPassword"
-type="password"
-placeholder="Nueva contraseña">
+            <button
+                class="boton-principal"
+                onclick="cambiarPassword()"
+            >
+                Cambiar contraseña
+            </button>
 
-<button
-class="principal"
-onclick="cambiarPassword()">
+        </div>
 
-Cambiar contraseña
+        <button
+            class="boton-link"
+            onclick="mostrarLogin()"
+        >
+            Volver al inicio
+        </button>
 
-</button>
+        <div
+            id="mensajeRecuperacion"
+            class="mensaje"
+        ></div>
+
+    </div>
 
 </div>
 
-<button
-class="link"
-onclick="mostrarLogin()">
 
-Volver
-
-</button>
-
-<div id="recuperacionMensaje"></div>
-
-</div>
-
-</div>
-
-
+<!-- ========================= -->
 <!-- APP -->
+<!-- ========================= -->
 
 <div id="app" class="oculto">
 
 
-<div class="sidebar">
+    <!-- BARRA LATERAL -->
 
-<div class="titulo">
-🦜 Kiwi AI
+    <aside class="barra-lateral">
+
+        <div class="titulo">
+            🦜 Kiwi AI
+        </div>
+
+        <button
+            class="nuevo-chat"
+            onclick="nuevoChat()"
+        >
+            ＋ Nuevo chat
+        </button>
+
+        <div class="historial-titulo">
+            Chats
+        </div>
+
+        <div id="historial"></div>
+
+        <button
+            class="boton-ajustes"
+            onclick="abrirAjustes()"
+        >
+            ⚙️ Ajustes
+        </button>
+
+    </aside>
+
+
+    <!-- ZONA PRINCIPAL -->
+
+    <main class="principal">
+
+        <div class="cabecera">
+            🦜 Kiwi AI
+        </div>
+
+
+        <div id="chat">
+
+            <div class="bienvenida">
+
+                <div class="kiwi-grande">
+                    🦜
+                </div>
+
+                <h1>
+                    ¿En qué puedo ayudarte?
+                </h1>
+
+                <p>
+                    Habla con Kiwi AI
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="entrada">
+
+            <div class="caja-mensaje">
+
+                <textarea
+                    id="texto"
+                    rows="1"
+                    placeholder="Escribe un mensaje a Kiwi..."
+                ></textarea>
+
+                <button
+                    id="microfono"
+                    class="boton-microfono"
+                    onclick="activarMicrofono()"
+                >
+                    🎤
+                </button>
+
+                <button
+                    class="enviar"
+                    onclick="enviarMensaje()"
+                >
+                    ➤
+                </button>
+
+            </div>
+
+            <div
+                id="estadoMicrofono"
+                class="estado-microfono"
+            ></div>
+
+        </div>
+
+    </main>
+
 </div>
 
-<button
-class="nuevo"
-onclick="nuevoChat()">
 
-＋ Nuevo chat
-
-</button>
-
-<div class="historialTitulo">
-Chats
-</div>
-
-<div id="historial"></div>
-
-<button
-class="ajustes"
-onclick="abrirPerfil()">
-
-⚙️ Ajustes / Perfil
-
-</button>
-
-</div>
-
-
-<div class="principalArea">
-
-<div class="cabecera">
-🦜 Kiwi AI
-</div>
-
-<div id="chat">
-
-<div class="bienvenida">
-
-<div class="kiwi">
-🦜
-</div>
-
-<h1>
-¿En qué puedo ayudarte?
-</h1>
-
-<p>
-Habla con Kiwi AI
-</p>
-
-</div>
-
-</div>
-
-
-<div class="entrada">
-
-<div class="cajaMensaje">
-
-<textarea
-id="texto"
-placeholder="Escribe un mensaje a Kiwi..."
-rows="1"></textarea>
-
-<button
-class="micro"
-onclick="microfono()">
-
-🎤
-
-</button>
-
-<button
-class="enviar"
-onclick="enviar()">
-
-➤
-
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- PERFIL -->
+<!-- ========================= -->
+<!-- VENTANA AJUSTES -->
+<!-- ========================= -->
 
 <div
-id="perfilModal"
-class="modal oculto">
+    id="ventanaAjustes"
+    class="ventana oculto"
+>
 
-<div class="modalCaja">
+    <div class="caja-ajustes">
 
-<h2>👤 Perfil</h2>
+        <h2>
+            ⚙️ Ajustes
+        </h2>
 
-<div
-id="avatar"
-class="avatar">
+        <p>
+            Cuenta
+        </p>
 
-🦜
+        <div
+            id="correoAjustes"
+            class="correo-ajustes"
+        ></div>
 
-</div>
 
-<input
-id="avatarInput"
-type="file"
-accept="image/*"
-onchange="cambiarAvatar(event)">
+        <button
+            class="boton-cerrar-sesion"
+            onclick="cerrarSesion()"
+        >
+            🚪 Cerrar sesión
+        </button>
 
-<input
-id="perfilNombre"
-placeholder="Nombre">
 
-<div
-id="perfilCorreo"
-class="info">
-</div>
+        <button
+            class="boton-eliminar"
+            onclick="eliminarCuenta()"
+        >
+            🗑️ Eliminar cuenta
+        </button>
 
-<div
-id="perfilFecha"
-class="info">
-</div>
 
-<button
-class="principal"
-onclick="guardarPerfil()">
+        <button
+            class="boton-cerrar-ajustes"
+            onclick="cerrarAjustes()"
+        >
+            Cerrar
+        </button>
 
-💾 Guardar cambios
-
-</button>
-
-<button
-class="cerrar"
-onclick="cerrarPerfil()">
-
-🚪 Cerrar sesión
-
-</button>
-
-<button
-class="peligro"
-onclick="eliminarCuenta()">
-
-🗑️ Eliminar cuenta
-
-</button>
-
-<button
-class="cerrar"
-onclick="cerrarPerfilModal()">
-
-Cerrar
-
-</button>
-
-<div id="perfilMensaje"></div>
-
-</div>
+    </div>
 
 </div>
 
@@ -693,65 +751,73 @@ Cerrar
 <script>
 
 
-let usuario = null;
+/* =========================
+   VARIABLES
+========================= */
 
 let chats = [];
 
 let chatActual = null;
 
-let avatarBase64 = "";
+let reconocimiento = null;
+
+let reconociendo = false;
 
 
 /* =========================
    PANTALLAS
 ========================= */
 
-function ocultarPantallas(){
+function ocultarTodo() {
 
-document
-.getElementById("login")
-.classList.add("oculto");
+    document
+        .getElementById("pantallaLogin")
+        .classList.add("oculto");
 
-document
-.getElementById("registro")
-.classList.add("oculto");
+    document
+        .getElementById("pantallaRegistro")
+        .classList.add("oculto");
 
-document
-.getElementById("recuperacion")
-.classList.add("oculto");
+    document
+        .getElementById("pantallaRecuperacion")
+        .classList.add("oculto");
 
-}
-
-
-function mostrarLogin(){
-
-ocultarPantallas();
-
-document
-.getElementById("login")
-.classList.remove("oculto");
+    document
+        .getElementById("app")
+        .classList.add("oculto");
 
 }
 
 
-function mostrarRegistro(){
+function mostrarLogin() {
 
-ocultarPantallas();
+    ocultarTodo();
 
-document
-.getElementById("registro")
-.classList.remove("oculto");
+    document
+        .getElementById("pantallaLogin")
+        .classList.remove("oculto");
 
 }
 
 
-function mostrarRecuperacion(){
+function mostrarRegistro() {
 
-ocultarPantallas();
+    ocultarTodo();
 
-document
-.getElementById("recuperacion")
-.classList.remove("oculto");
+    document
+        .getElementById("pantallaRegistro")
+        .classList.remove("oculto");
+
+}
+
+
+function mostrarRecuperacion() {
+
+    ocultarTodo();
+
+    document
+        .getElementById("pantallaRecuperacion")
+        .classList.remove("oculto");
 
 }
 
@@ -760,89 +826,89 @@ document
    REGISTRO
 ========================= */
 
-async function registrar(){
+async function registrarse() {
 
-const nombre =
-document.getElementById(
-"registroNombre"
-).value.trim();
+    const email =
+        document.getElementById(
+            "registroEmail"
+        ).value.trim();
 
-const email =
-document.getElementById(
-"registroEmail"
-).value.trim();
+    const password =
+        document.getElementById(
+            "registroPassword"
+        ).value;
 
-const password =
-document.getElementById(
-"registroPassword"
-).value;
-
-const password2 =
-document.getElementById(
-"registroPassword2"
-).value;
+    const password2 =
+        document.getElementById(
+            "registroPassword2"
+        ).value;
 
 
-if(!nombre || !email || !password){
+    if (!email || !password || !password2) {
 
-document.getElementById(
-"registroMensaje"
-).textContent =
-"Completa todos los campos.";
+        document.getElementById(
+            "mensajeRegistro"
+        ).textContent =
+            "Completa todos los campos.";
 
-return;
-
-}
-
-if(password !== password2){
-
-document.getElementById(
-"registroMensaje"
-).textContent =
-"Las contraseñas no coinciden.";
-
-return;
-
-}
+        return;
+    }
 
 
-const respuesta =
-await fetch(
-"/registro",
-{
-method:"POST",
-headers:{
-"Content-Type":
-"application/json"
-},
-body:JSON.stringify({
-nombre:nombre,
-email:email,
-password:password
-})
-});
+    if (password !== password2) {
+
+        document.getElementById(
+            "mensajeRegistro"
+        ).textContent =
+            "Las contraseñas no coinciden.";
+
+        return;
+    }
 
 
-const datos =
-await respuesta.json();
+    const respuesta =
+        await fetch(
+            "/registro",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            }
+        );
 
 
-if(datos.ok){
+    const datos =
+        await respuesta.json();
 
-alert(
-"Cuenta creada correctamente."
-);
 
-mostrarLogin();
+    if (datos.ok) {
 
-}else{
+        document.getElementById(
+            "mensajeRegistro"
+        ).textContent =
+            "Cuenta creada correctamente.";
 
-document.getElementById(
-"registroMensaje"
-).textContent =
-datos.mensaje;
+        setTimeout(
+            mostrarLogin,
+            1000
+        );
 
-}
+    } else {
+
+        document.getElementById(
+            "mensajeRegistro"
+        ).textContent =
+            datos.mensaje;
+
+    }
 
 }
 
@@ -851,387 +917,232 @@ datos.mensaje;
    LOGIN
 ========================= */
 
-async function login(){
+async function iniciarSesion() {
 
-const email =
-document.getElementById(
-"loginEmail"
-).value.trim();
+    const email =
+        document.getElementById(
+            "loginEmail"
+        ).value.trim();
 
-const password =
-document.getElementById(
-"loginPassword"
-).value;
-
-
-const respuesta =
-await fetch(
-"/login",
-{
-method:"POST",
-headers:{
-"Content-Type":
-"application/json"
-},
-body:JSON.stringify({
-email:email,
-password:password
-})
-});
+    const password =
+        document.getElementById(
+            "loginPassword"
+        ).value;
 
 
-const datos =
-await respuesta.json();
+    const respuesta =
+        await fetch(
+            "/login",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+
+                body: JSON.stringify({
+                    email: email,
+                    password: password
+                })
+            }
+        );
 
 
-if(!datos.ok){
-
-document.getElementById(
-"loginMensaje"
-).textContent =
-datos.mensaje;
-
-return;
-
-}
+    const datos =
+        await respuesta.json();
 
 
-usuario =
-datos.usuario;
+    if (datos.ok) {
 
+        localStorage.setItem(
+            "kiwi_usuario",
+            email
+        );
 
-localStorage.setItem(
-"kiwi_usuario",
-JSON.stringify(usuario)
-);
+        entrarEnKiwi();
 
+    } else {
 
-entrar();
+        document.getElementById(
+            "mensajeLogin"
+        ).textContent =
+            datos.mensaje;
 
+    }
 
 }
 
 
 /* =========================
-   ENTRAR
+   ENTRAR EN KIWI
 ========================= */
 
-function entrar(){
+function entrarEnKiwi() {
 
-ocultarPantallas();
+    ocultarTodo();
 
-document
-.getElementById("app")
-.classList.remove("oculto");
+    document
+        .getElementById("app")
+        .classList.remove("oculto");
 
-cargarChats();
+    document.getElementById(
+        "correoAjustes"
+    ).textContent =
+        localStorage.getItem(
+            "kiwi_usuario"
+        );
+
+    cargarChats();
 
 }
 
 
 /* =========================
-   PERFIL
+   AJUSTES
 ========================= */
 
-async function abrirPerfil(){
+function abrirAjustes() {
 
-if(!usuario){
+    const email =
+        localStorage.getItem(
+            "kiwi_usuario"
+        );
 
-return;
+    document.getElementById(
+        "correoAjustes"
+    ).textContent =
+        email || "Sin sesión";
 
-}
-
-
-const respuesta =
-await fetch(
-"/perfil",
-{
-method:"POST",
-headers:{
-"Content-Type":
-"application/json"
-},
-body:JSON.stringify({
-email:usuario.email
-})
-});
-
-
-const datos =
-await respuesta.json();
-
-
-if(datos.ok){
-
-usuario =
-datos.usuario;
-
-document.getElementById(
-"perfilNombre"
-).value =
-usuario.nombre;
-
-document.getElementById(
-"perfilCorreo"
-).textContent =
-"📧 " + usuario.email;
-
-document.getElementById(
-"perfilFecha"
-).textContent =
-"📅 Miembro desde " +
-usuario.fecha_registro;
-
-
-avatarBase64 =
-usuario.avatar || "";
-
-
-mostrarAvatar();
-
-document
-.getElementById("perfilModal")
-.classList.remove(
-"oculto"
-);
-
-}
+    document
+        .getElementById("ventanaAjustes")
+        .classList.remove("oculto");
 
 }
 
 
-function mostrarAvatar(){
+function cerrarAjustes() {
 
-const zona =
-document.getElementById(
-"avatar"
-);
-
-
-if(avatarBase64){
-
-zona.innerHTML =
-`<img src="${avatarBase64}">`;
-
-}else{
-
-zona.textContent =
-"🦜";
-
-}
+    document
+        .getElementById("ventanaAjustes")
+        .classList.add("oculto");
 
 }
 
 
-function cambiarAvatar(event){
+/* =========================
+   CERRAR SESIÓN
+========================= */
 
-const archivo =
-event.target.files[0];
+function cerrarSesion() {
 
-if(!archivo){
+    localStorage.removeItem(
+        "kiwi_usuario"
+    );
 
-return;
+    chats = [];
 
-}
+    chatActual = null;
 
+    cerrarAjustes();
 
-const lector =
-new FileReader();
-
-
-lector.onload =
-function(){
-
-avatarBase64 =
-lector.result;
-
-mostrarAvatar();
-
-};
-
-
-lector.readAsDataURL(
-archivo
-);
+    mostrarLogin();
 
 }
 
 
-async function guardarPerfil(){
+/* =========================
+   ELIMINAR CUENTA
+========================= */
 
-const nombre =
-document.getElementById(
-"perfilNombre"
-).value.trim();
+async function eliminarCuenta() {
 
+    const email =
+        localStorage.getItem(
+            "kiwi_usuario"
+        );
 
-if(!nombre){
 
-alert(
-"Escribe un nombre."
-);
+    if (!email) {
 
-return;
+        return;
 
-}
+    }
 
 
-const respuesta =
-await fetch(
-"/actualizar_perfil",
-{
-method:"POST",
-headers:{
-"Content-Type":
-"application/json"
-},
-body:JSON.stringify({
+    const confirmar =
+        confirm(
+            "¿Seguro que quieres eliminar tu cuenta?\n\nEsta acción no se puede deshacer."
+        );
 
-email:usuario.email,
 
-nombre:nombre,
+    if (!confirmar) {
 
-avatar:avatarBase64
+        return;
 
-})
-});
+    }
 
 
-const datos =
-await respuesta.json();
+    try {
 
+        const respuesta =
+            await fetch(
+                "/eliminar_cuenta",
+                {
+                    method: "POST",
 
-if(datos.ok){
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
 
-usuario.nombre =
-nombre;
+                    body: JSON.stringify({
+                        email: email
+                    })
+                }
+            );
 
-usuario.avatar =
-avatarBase64;
 
-localStorage.setItem(
-"kiwi_usuario",
-JSON.stringify(usuario)
-);
+        const datos =
+            await respuesta.json();
 
-document.getElementById(
-"perfilMensaje"
-).textContent =
-"Perfil guardado correctamente.";
 
-}else{
+        if (datos.ok) {
 
-document.getElementById(
-"perfilMensaje"
-).textContent =
-datos.mensaje;
+            localStorage.removeItem(
+                "kiwi_usuario"
+            );
 
-}
+            localStorage.removeItem(
+                "kiwi_chats_" + email
+            );
 
-}
+            chats = [];
 
+            chatActual = null;
 
-function cerrarPerfilModal(){
+            alert(
+                "Tu cuenta ha sido eliminada correctamente."
+            );
 
-document
-.getElementById("perfilModal")
-.classList.add(
-"oculto"
-);
+            location.reload();
 
-}
+        } else {
 
+            alert(
+                datos.mensaje ||
+                "No se pudo eliminar la cuenta."
+            );
 
-function cerrarPerfil(){
+        }
 
-localStorage.removeItem(
-"kiwi_usuario"
-);
+    } catch (error) {
 
-usuario = null;
+        alert(
+            "No se pudo conectar con Kiwi."
+        );
 
-chats = [];
-
-chatActual = null;
-
-cerrarPerfilModal();
-
-mostrarLogin();
-
-}
-
-
-async function eliminarCuenta(){
-
-if(!usuario){
-
-return;
-
-}
-
-
-const confirmar =
-confirm(
-"¿Seguro que quieres eliminar tu cuenta?\n\nEsta acción no se puede deshacer."
-);
-
-
-if(!confirmar){
-
-return;
-
-}
-
-
-const respuesta =
-await fetch(
-"/eliminar_cuenta",
-{
-method:"POST",
-headers:{
-"Content-Type":
-"application/json"
-},
-body:JSON.stringify({
-email:usuario.email
-})
-});
-
-
-const datos =
-await respuesta.json();
-
-
-if(datos.ok){
-
-localStorage.removeItem(
-"kiwi_usuario"
-);
-
-localStorage.removeItem(
-"kiwi_chats_" +
-usuario.email
-);
-
-usuario = null;
-
-chats = [];
-
-chatActual = null;
-
-alert(
-"Cuenta eliminada correctamente."
-);
-
-location.reload();
-
-}else{
-
-alert(
-"No se pudo eliminar la cuenta."
-);
-
-}
+    }
 
 }
 
@@ -1240,495 +1151,586 @@ alert(
    RECUPERACION
 ========================= */
 
-async function generarCodigo(){
+async function generarCodigo() {
 
-const email =
-document.getElementById(
-"recuperarEmail"
-).value.trim();
-
-
-const respuesta =
-await fetch(
-"/generar_codigo",
-{
-method:"POST",
-headers:{
-"Content-Type":
-"application/json"
-},
-body:JSON.stringify({
-email:email
-})
-});
+    const email =
+        document.getElementById(
+            "recuperarEmail"
+        ).value.trim();
 
 
-const datos =
-await respuesta.json();
+    const respuesta =
+        await fetch(
+            "/generar_codigo",
+            {
+                method: "POST",
+
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
+
+                body: JSON.stringify({
+                    email: email
+                })
+            }
+        );
 
 
-if(!datos.ok){
-
-document.getElementById(
-"recuperacionMensaje"
-).textContent =
-datos.mensaje;
-
-return;
-
-}
+    const datos =
+        await respuesta.json();
 
 
-document.getElementById(
-"codigo"
-).textContent =
-datos.codigo;
+    if (!datos.ok) {
+
+        document.getElementById(
+            "mensajeRecuperacion"
+        ).textContent =
+            datos.mensaje;
+
+        return;
+
+    }
 
 
-document.getElementById(
-"zonaCodigo"
-).classList.remove(
-"oculto"
-);
-
-}
+    document.getElementById(
+        "codigo"
+    ).textContent =
+        datos.codigo;
 
 
-async function cambiarPassword(){
-
-const email =
-document.getElementById(
-"recuperarEmail"
-).value.trim();
-
-const codigo =
-document.getElementById(
-"codigoInput"
-).value.trim();
-
-const password =
-document.getElementById(
-"nuevaPassword"
-).value;
-
-
-const respuesta =
-await fetch(
-"/cambiar_password",
-{
-method:"POST",
-headers:{
-"Content-Type":
-"application/json"
-},
-body:JSON.stringify({
-
-email:email,
-
-codigo:codigo,
-
-password:password
-
-})
-});
-
-
-const datos =
-await respuesta.json();
-
-
-if(datos.ok){
-
-alert(
-"Contraseña cambiada correctamente."
-);
-
-mostrarLogin();
-
-}else{
-
-document.getElementById(
-"recuperacionMensaje"
-).textContent =
-datos.mensaje;
-
-}
+    document.getElementById(
+        "zonaCodigo"
+    ).classList.remove(
+        "oculto"
+    );
 
 }
 
 
-/* =========================
-   CHATS
-========================= */
+async function cambiarPassword() {
 
-function claveChats(){
+    const email =
+        document.getElementById(
+            "recuperarEmail"
+        ).value.trim();
 
-return "kiwi_chats_" +
-usuario.email;
+    const codigo =
+        document.getElementById(
+            "codigoIntroducido"
+        ).value.trim();
 
-}
+    const password =
+        document.getElementById(
+            "nuevaPassword"
+        ).value;
 
 
-function guardarChats(){
+    const respuesta =
+        await fetch(
+            "/cambiar_password",
+            {
+                method: "POST",
 
-localStorage.setItem(
-claveChats(),
-JSON.stringify(chats)
-);
+                headers: {
+                    "Content-Type":
+                        "application/json"
+                },
 
-}
+                body: JSON.stringify({
 
+                    email: email,
 
-function cargarChats(){
+                    codigo: codigo,
 
-const guardados =
-localStorage.getItem(
-claveChats()
-);
+                    password: password
 
+                })
+            }
+        );
 
-if(guardados){
 
-try{
+    const datos =
+        await respuesta.json();
 
-chats =
-JSON.parse(
-guardados
-);
 
-}catch{
+    if (datos.ok) {
 
-chats = [];
+        alert(
+            "Contraseña cambiada correctamente."
+        );
 
-}
+        mostrarLogin();
 
-}
+    } else {
 
+        document.getElementById(
+            "mensajeRecuperacion"
+        ).textContent =
+            datos.mensaje;
 
-if(!chats.length){
-
-nuevoChat();
-
-}else{
-
-abrirChat(
-chats[0].id
-);
-
-}
-
-}
-
-
-function nuevoChat(){
-
-const nuevo = {
-
-id:Date.now(),
-
-titulo:"Nuevo chat",
-
-mensajes:[]
-
-};
-
-
-chats.unshift(
-nuevo
-);
-
-chatActual =
-nuevo.id;
-
-guardarChats();
-
-mostrarHistorial();
-
-mostrarChat();
-
-}
-
-
-function mostrarHistorial(){
-
-const zona =
-document.getElementById(
-"historial"
-);
-
-zona.innerHTML = "";
-
-
-chats.forEach(
-chat=>{
-
-const item =
-document.createElement(
-"div"
-);
-
-item.className =
-"chatItem";
-
-item.textContent =
-chat.titulo;
-
-item.onclick =
-()=>abrirChat(
-chat.id
-);
-
-zona.appendChild(
-item
-);
-
-}
-);
-
-}
-
-
-function abrirChat(id){
-
-chatActual =
-id;
-
-mostrarHistorial();
-
-mostrarChat();
-
-}
-
-
-function mostrarChat(){
-
-const zona =
-document.getElementById(
-"chat"
-);
-
-zona.innerHTML = "";
-
-
-const chat =
-chats.find(
-c=>c.id===chatActual
-);
-
-
-if(!chat){
-
-return;
-
-}
-
-
-if(!chat.mensajes.length){
-
-zona.innerHTML = `
-
-<div class="bienvenida">
-
-<div class="kiwi">
-🦜
-</div>
-
-<h1>
-¿En qué puedo ayudarte?
-</h1>
-
-<p>
-Habla con Kiwi AI
-</p>
-
-</div>
-
-`;
-
-return;
-
-}
-
-
-chat.mensajes.forEach(
-m=>mostrarMensaje(
-m.texto,
-m.tipo
-)
-);
-
-}
-
-
-function mostrarMensaje(
-texto,
-tipo
-){
-
-const zona =
-document.getElementById(
-"chat"
-);
-
-const div =
-document.createElement(
-"div"
-);
-
-div.className =
-"mensaje " +
-(
-tipo === "usuario"
-? "usuario"
-: "kiwiMensaje"
-);
-
-div.textContent =
-(
-tipo === "usuario"
-? "👤 "
-: "🦜 "
-) + texto;
-
-zona.appendChild(
-div
-);
-
-zona.scrollTop =
-zona.scrollHeight;
+    }
 
 }
 
 
 /* =========================
-   ENVIAR
+   HISTORIAL
 ========================= */
 
-async function enviar(){
+function claveChats() {
 
-const caja =
-document.getElementById(
-"texto"
-);
-
-const texto =
-caja.value.trim();
-
-
-if(!texto){
-
-return;
+    return (
+        "kiwi_chats_" +
+        localStorage.getItem(
+            "kiwi_usuario"
+        )
+    );
 
 }
 
 
-const chat =
-chats.find(
-c=>c.id===chatActual
-);
+function guardarChats() {
 
-
-if(!chat){
-
-return;
+    localStorage.setItem(
+        claveChats(),
+        JSON.stringify(chats)
+    );
 
 }
 
 
-chat.mensajes.push({
+function cargarChats() {
 
-tipo:"usuario",
+    const guardados =
+        localStorage.getItem(
+            claveChats()
+        );
 
-texto:texto
 
-});
+    if (guardados) {
+
+        chats =
+            JSON.parse(
+                guardados
+            );
+
+    } else {
+
+        chats = [];
+
+    }
 
 
-if(chat.titulo==="Nuevo chat"){
+    if (chats.length === 0) {
 
-chat.titulo =
-texto.substring(
-0,
-30
-);
+        nuevoChat();
+
+    } else {
+
+        abrirChat(
+            chats[0].id
+        );
+
+    }
+
+}
+
+
+function nuevoChat() {
+
+    const nuevo = {
+
+        id: Date.now(),
+
+        titulo: "Nuevo chat",
+
+        mensajes: []
+
+    };
+
+
+    chats.unshift(nuevo);
+
+    chatActual =
+        nuevo.id;
+
+
+    guardarChats();
+
+    mostrarHistorial();
+
+    mostrarChatActual();
 
 }
 
 
-guardarChats();
+function mostrarHistorial() {
 
-mostrarHistorial();
-
-mostrarMensaje(
-texto,
-"usuario"
-);
-
-caja.value = "";
+    const historial =
+        document.getElementById(
+            "historial"
+        );
 
 
-const esperando =
-mostrarMensaje(
-"Kiwi está pensando...",
-"kiwi"
-);
+    historial.innerHTML = "";
 
 
-try{
+    chats.forEach(
+        function(chat) {
 
-const respuesta =
-await fetch(
-"/chat",
-{
-method:"POST",
-headers:{
-"Content-Type":
-"application/json"
-},
-body:JSON.stringify({
-
-mensaje:texto,
-
-email:usuario.email
-
-})
-});
+            const elemento =
+                document.createElement(
+                    "div"
+                );
 
 
-const datos =
-await respuesta.json();
+            elemento.className =
+                "chat-historial";
 
 
-esperando.remove();
+            if (
+                chat.id === chatActual
+            ) {
+
+                elemento.classList.add(
+                    "activo"
+                );
+
+            }
 
 
-chat.mensajes.push({
-
-tipo:"kiwi",
-
-texto:datos.respuesta
-
-});
+            elemento.textContent =
+                chat.titulo;
 
 
-guardarChats();
+            elemento.onclick =
+                function() {
 
-mostrarMensaje(
-datos.respuesta,
-"kiwi"
-);
+                    abrirChat(
+                        chat.id
+                    );
+
+                };
 
 
-}catch{
+            historial.appendChild(
+                elemento
+            );
 
-esperando.remove();
-
-mostrarMensaje(
-"Kiwi no puede conectarse con Ollama.",
-"kiwi"
-);
+        }
+    );
 
 }
+
+
+function abrirChat(id) {
+
+    chatActual = id;
+
+    mostrarHistorial();
+
+    mostrarChatActual();
+
+}
+
+
+function mostrarChatActual() {
+
+    const zona =
+        document.getElementById(
+            "chat"
+        );
+
+
+    zona.innerHTML = "";
+
+
+    const chat =
+        chats.find(
+            function(c) {
+
+                return c.id === chatActual;
+
+            }
+        );
+
+
+    if (!chat) {
+
+        return;
+
+    }
+
+
+    if (chat.mensajes.length === 0) {
+
+        zona.innerHTML = `
+
+            <div class="bienvenida">
+
+                <div class="kiwi-grande">
+                    🦜
+                </div>
+
+                <h1>
+                    ¿En qué puedo ayudarte?
+                </h1>
+
+                <p>
+                    Habla con Kiwi AI
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    chat.mensajes.forEach(
+        function(mensaje) {
+
+            mostrarMensajeEnPantalla(
+                mensaje.texto,
+                mensaje.tipo
+            );
+
+        }
+    );
+
+
+    zona.scrollTop =
+        zona.scrollHeight;
+
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+async function enviarMensaje() {
+
+    const textoSaludo = document.getElementById("texto").value.trim().toLowerCase();
+
+    if (["hola","holaa","holaaa","buenas","buenos dias","buenas tardes","buenas noches"].includes(textoSaludo)) {
+        const caja = document.getElementById("texto");
+        caja.value = "";
+        mostrarMensajeEnPantalla(textoSaludo, "usuario");
+        mostrarMensajeEnPantalla("Pio", "kiwi");
+        return;
+    }
+
+
+    const caja =
+        document.getElementById(
+            "texto"
+        );
+
+
+    const texto =
+        caja.value.trim();
+
+
+    if (!texto) {
+
+        return;
+
+    }
+
+
+    const chat =
+        chats.find(
+            function(c) {
+
+                return c.id === chatActual;
+
+            }
+        );
+
+
+    if (!chat) {
+
+        return;
+
+    }
+
+
+    const bienvenida =
+        document.querySelector(
+            ".bienvenida"
+        );
+
+
+    if (bienvenida) {
+
+        bienvenida.remove();
+
+    }
+
+
+    chat.mensajes.push({
+
+        tipo: "usuario",
+
+        texto: texto
+
+    });
+
+
+    if (
+        chat.titulo ===
+        "Nuevo chat"
+    ) {
+
+        chat.titulo =
+            texto.substring(
+                0,
+                30
+            );
+
+    }
+
+
+    guardarChats();
+
+    mostrarHistorial();
+
+
+    mostrarMensajeEnPantalla(
+        texto,
+        "usuario"
+    );
+
+
+    caja.value = "";
+
+
+    const pensando =
+        mostrarMensajeEnPantalla(
+            "Kiwi está pensando...",
+            "kiwi"
+        );
+
+
+    try {
+
+        const respuesta =
+            await fetch(
+                "/chat",
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body: JSON.stringify({
+                        mensaje: texto
+                    })
+                }
+            );
+
+
+        const datos =
+            await respuesta.json();
+
+
+        pensando.remove();
+
+
+        chat.mensajes.push({
+
+            tipo: "kiwi",
+
+            texto:
+                datos.respuesta
+
+        });
+
+
+        guardarChats();
+
+
+        mostrarMensajeEnPantalla(
+            datos.respuesta,
+            "kiwi"
+        );
+
+
+    } catch (error) {
+
+        pensando.remove();
+
+
+        mostrarMensajeEnPantalla(
+            "No puedo conectar con Kiwi.",
+            "kiwi"
+        );
+
+    }
+
+}
+
+
+function mostrarMensajeEnPantalla(
+    texto,
+    tipo
+) {
+
+    const zona =
+        document.getElementById(
+            "chat"
+        );
+
+
+    const elemento =
+        document.createElement(
+            "div"
+        );
+
+
+    elemento.className =
+        "mensaje-chat";
+
+
+    if (
+        tipo === "usuario"
+    ) {
+
+        elemento.classList.add(
+            "usuario-mensaje"
+        );
+
+        elemento.textContent =
+            "👤 " + texto;
+
+    } else {
+
+        elemento.classList.add(
+            "kiwi-mensaje"
+        );
+
+        elemento.textContent =
+            "🦜 " + texto;
+
+    }
+
+
+    zona.appendChild(
+        elemento
+    );
+
+
+    zona.scrollTop =
+        zona.scrollHeight;
+
+
+    return elemento;
 
 }
 
@@ -1738,106 +1740,165 @@ mostrarMensaje(
 ========================= */
 
 document
-.getElementById("texto")
-.addEventListener(
-"keydown",
-function(e){
+    .getElementById("texto")
+    .addEventListener(
+        "keydown",
+        function(event) {
 
-if(
-e.key==="Enter" &&
-!e.shiftKey
-){
+            if (
+                event.key === "Enter" &&
+                !event.shiftKey
+            ) {
 
-e.preventDefault();
+                event.preventDefault();
 
-enviar();
+                enviarMensaje();
 
-}
+            }
 
-}
-);
+        }
+    );
 
 
 /* =========================
    MICROFONO
 ========================= */
 
-function microfono(){
+function activarMicrofono() {
 
-const Reconocimiento =
-window.SpeechRecognition ||
-window.webkitSpeechRecognition;
-
-
-if(!Reconocimiento){
-
-alert(
-"Tu navegador no admite reconocimiento de voz."
-);
-
-return;
-
-}
+    const SpeechRecognition =
+        window.SpeechRecognition ||
+        window.webkitSpeechRecognition;
 
 
-const reconocimiento =
-new Reconocimiento();
+    if (!SpeechRecognition) {
+
+        document.getElementById(
+            "estadoMicrofono"
+        ).textContent =
+            "Tu navegador no admite el micrófono.";
+
+        return;
+
+    }
 
 
-reconocimiento.lang =
-"es-ES";
+    if (reconociendo) {
 
-reconocimiento.interimResults =
-false;
+        reconocimiento.stop();
 
-reconocimiento.continuous =
-false;
+        return;
 
-
-reconocimiento.onresult =
-function(event){
-
-document.getElementById(
-"texto"
-).value =
-event.results[0][0]
-.transcript;
-
-};
+    }
 
 
-reconocimiento.start();
+    reconocimiento =
+        new SpeechRecognition();
+
+
+    reconocimiento.lang =
+        "es-ES";
+
+
+    reconocimiento.continuous =
+        false;
+
+
+    reconocimiento.interimResults =
+        true;
+
+
+    reconocimiento.onstart =
+        function() {
+
+            reconociendo = true;
+
+            document.getElementById(
+                "microfono"
+            ).classList.add(
+                "escuchando"
+            );
+
+            document.getElementById(
+                "estadoMicrofono"
+            ).textContent =
+                "🎤 Escuchando...";
+
+        };
+
+
+    reconocimiento.onresult =
+        function(event) {
+
+            let resultado = "";
+
+
+            for (
+                let i = event.resultIndex;
+                i < event.results.length;
+                i++
+            ) {
+
+                resultado +=
+                    event.results[i][0]
+                        .transcript;
+
+            }
+
+
+            document.getElementById(
+                "texto"
+            ).value =
+                resultado;
+
+        };
+
+
+    reconocimiento.onerror =
+        function() {
+
+            document.getElementById(
+                "estadoMicrofono"
+            ).textContent =
+                "No se pudo utilizar el micrófono.";
+
+        };
+
+
+    reconocimiento.onend =
+        function() {
+
+            reconociendo = false;
+
+            document.getElementById(
+                "microfono"
+            ).classList.remove(
+                "escuchando"
+            );
+
+            document.getElementById(
+                "estadoMicrofono"
+            ).textContent = "";
+
+        };
+
+
+    reconocimiento.start();
 
 }
 
 
 /* =========================
-   SESION GUARDADA
+   SESION AUTOMATICA
 ========================= */
 
-try{
+if (
+    localStorage.getItem(
+        "kiwi_usuario"
+    )
+) {
 
-const guardado =
-localStorage.getItem(
-"kiwi_usuario"
-);
-
-if(guardado){
-
-usuario =
-JSON.parse(
-guardado
-);
-
-entrar();
-
-}
-
-}catch{
-
-localStorage.removeItem(
-"kiwi_usuario"
-);
+    entrarEnKiwi();
 
 }
 
@@ -1845,4 +1906,4 @@ localStorage.removeItem(
 
 </body>
 
-</html>
+</html>\n<script>document.addEventListener('domcontentloaded',()=>{document.querySelectorAll('*<*,').forEach(e=>{const t=(e.textContent||"").toLowerCase();if(t.includes('hora mundial')||t.includes('consultar hora')){e.style.display='none';}})})</script>
